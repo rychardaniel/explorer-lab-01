@@ -1,3 +1,11 @@
 Aula 1
     Assisti até 31 min
     Assisti até 49 min
+
+    (Navegador) Ao ir até um elemento pelo inspecionar, é possível copiar o selector dele, que pode ser usado no querySelection("elemento")
+
+    setAtrubute("nome-do-atributo", "novo-valor-para-o-atributo")
+    globalThis.funcao = funcao // para deixar uma função global (acessível pelo console do navegador)
+
+Aula 2
+    
