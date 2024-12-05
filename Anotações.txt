@@ -8,4 +8,5 @@ Aula 1
     globalThis.funcao = funcao // para deixar uma função global (acessível pelo console do navegador)
 
 Aula 2
+    Assisti até 33 min
     

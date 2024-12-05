@@ -1,4 +1,5 @@
 import "./css/index.css"
+import IMask from "imask"
 
 const cor1Cartao = document.querySelector("#app > section > div.cc-bg > svg > g > g:nth-child(1) > path")
 
@@ -27,6 +28,34 @@ function setCardType(type) {
     cor2Cartao.setAttribute("fill", colors[type][1])
     logoCartao.setAttribute("src", logos[type])
 }
+
+const securityCode = document.querySelector("#security-code")
+
+const securityCodePattern = {
+    mask: "0000"
+}
+
+const securityCodeMasked = IMask(securityCode, securityCodePattern)
+
+const expirationDate = document.querySelector("#expiration-date")
+
+const expirationDatePattern = {
+    mask: 'MM{/}YY',
+    blocks: {
+        MM: {
+            mask: IMask.MaskedRange,
+            from: 1,
+            to: 12
+        },
+        YY: {
+            mask: IMask.MaskedRange,
+            from: String(new Date().getFullYear()).substring(2),
+            to: String(new Date().getFullYear() + 10).substring(2)
+        }
+    }
+}
+
+const expirationDateMasked = IMask(expirationDate, expirationDatePattern)
 
 setCardType("default")
 
